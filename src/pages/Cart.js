@@ -7,7 +7,7 @@ import EmptyCart from "../components/EmptyCart";
 import ProductCard from "../components/ProductCard";
 
 const Cart = () => {
-  const { cart } = useSelector((state) => state);
+  const { product:{cart} } = useSelector((state) => state);
   // console.log(cart)
 
   return (

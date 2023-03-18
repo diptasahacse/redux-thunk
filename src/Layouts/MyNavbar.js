@@ -8,10 +8,10 @@ const MyNavbar = () => {
   let pathname = useLocation().pathname;
 
 
-  const {cart} = useSelector(state => state)
+  const {product:{cart}} = useSelector(state => state)
 
   const totalCartItem = cart.reduce((total, currentValue, currentIndex, arr)=>currentValue.quantity + total, 0)
-  // console.log(totalCartItem)
+ 
 
   return (
     <Navbar bg="light" expand="lg" className='sticky-top'>

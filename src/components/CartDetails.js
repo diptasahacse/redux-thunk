@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const CartDetails = () => {
-  const { cart } = useSelector((state) => state);
-  console.log(cart);
+  const { product:{cart} } = useSelector((state) => state);
+
 
   const subTotal = cart.reduce(
     (total, currentValue, currentIndex, arr) =>
