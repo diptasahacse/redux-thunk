@@ -17,6 +17,10 @@
   transform: scale(1.2);
 }
 
+.product-badge{
+  top: 10px;
+  right: 10px;
+}
 /* Cart product card */
 .product-cart-image {
   height: 60px;
