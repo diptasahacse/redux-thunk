@@ -10,13 +10,14 @@ const ProductCard = ({ item }) => {
     price,
     image,
     description,
+    stock,
     rating: { rate, count },
   } = item;
 
   const dispatch = useDispatch();
 
   const {cart} = useSelector(state => state)
-  // console.log(cart)
+  
 
   const {pathname} = useLocation();
   // console.log(pathname.includes("products"))
@@ -33,6 +34,9 @@ const ProductCard = ({ item }) => {
         <p className="d-flex align-items-center gap-1">
           <span>Rating: </span> <ProductRatingStar star={rate} />
         </p>
+        {
+          stock || <p className="text-danger m-0">Out of stock</p>
+        }
         <h5>Price : ${price}</h5>
 
         <div className="d-flex justify-content-between">
