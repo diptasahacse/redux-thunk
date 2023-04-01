@@ -10,16 +10,33 @@ const Dashboard = () => {
   return (
     <div id="wrapper" className="d-flex align-items-stretch">
       <div className={`${isToggle ? "toggle" : ""}`} id="sidebar-wrapper">
-        <div className="sidebar-header">Sidebar</div>
+        <div className="sidebar-header">
+          
+          <Link
+            className="icon-link back-to-home d-flex align-items-center"
+            to="/"
+          >
+            <span>
+              <i class="ri-home-4-fill"></i>
+            </span>
+          <span className="ms-2">
+          Home
+          </span>
+          </Link>
+        </div>
         <div className="sidebar-menu">
           <ul className="p-0">
             <li>
-              <Link to="/dashboard" className={`${pathName === "dashboard" ? "active" : ""}`}>
+              <Link
+                to="/dashboard"
+                className={`${pathName === "dashboard" ? "active" : ""}`}
+              >
                 Profile
               </Link>
             </li>
             <li>
-              <Link to="/dashboard/product-list"
+              <Link
+                to="/dashboard/product-list"
                 className={`${pathName === "product-list" ? "active" : ""}`}
               >
                 Product List
@@ -27,7 +44,7 @@ const Dashboard = () => {
             </li>
             <li>
               <Link
-              to="/dashboard/add-products"
+                to="/dashboard/add-products"
                 className={`${pathName === "add-products" ? "active" : ""}`}
               >
                 Add Products
@@ -38,12 +55,16 @@ const Dashboard = () => {
       </div>
       <div id="page-content-wrapper">
         <div className="dashboard-nav">
-          <button
-            className="btn btn-primary"
-            onClick={() => setToggle(!isToggle)}
-          >
-            Toggle
-          </button>
+          <div>
+            <button
+              className="toggle-button"
+              onClick={() => setToggle(!isToggle)}
+            >
+              <span>
+                <i class="ri-menu-2-line"></i>
+              </span>
+            </button>
+          </div>
         </div>
         <div className="dashboard-content-area">
           <div className="dashboard-inner-content">

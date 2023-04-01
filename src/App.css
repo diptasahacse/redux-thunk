@@ -18,6 +18,16 @@ body {
   box-sizing: border-box;
   font-size: 16px;
 }
+a,a:hover
+{
+  text-decoration: none;
+  color: black;
+}
+/*  */
+.icon-link{
+  text-decoration: none;
+  color: black;
+}
 
 /* Scroll Bar Design */
 ::-webkit-scrollbar {
@@ -131,7 +141,6 @@ body {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   min-height: 100vh;
-
   overflow-y: scroll;
 }
 .sidebar-header {
@@ -141,19 +150,28 @@ body {
   background-color: #2a3042;
   padding: 20px;
 }
-.sidebar-menu {
-  padding: 20px;
-}
 .sidebar-menu ul{
   list-style: none;
+}
+.sidebar-menu ul li{
+  padding: 5px 15px;
 }
 .sidebar-menu ul li a{
   text-decoration: none;
   color: #545a6d;
-  font-size: 13px;
+  font-size: 16px;
+  
+  width: 100%;
 }
 .sidebar-menu ul li a.active{
   color: white;
+}
+.toggle-button{
+  background-color: transparent;
+  border: none;
+}
+.toggle-button span{
+  font-size: 25px;
 }
 #sidebar-wrapper.toggle {
   margin-left: -300px;
@@ -171,10 +189,23 @@ body {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   background-color: #f7f7fa;
+  overflow-y: scroll;
 }
+
 .dashboard-nav {
   background-color: white;
   padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgb(160, 160, 160);
+}
+.back-to-home{
+  font-size: 25px;
+  color: white;
+}
+.back-to-home:hover{
+  color: white;
 }
 .dashboard-content-area {
   padding: 20px;
@@ -185,4 +216,12 @@ body {
   width: 100%;
   padding: 20px;
   border-radius: 10px;
+}
+
+
+
+/* Product list */
+.item-remove-button{
+  border: none;
+  background-color: transparent;
 }
