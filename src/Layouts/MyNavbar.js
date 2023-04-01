@@ -24,6 +24,7 @@ const MyNavbar = () => {
           <Link to="/about" className={`nav-link ${pathname === "/about" && "active"}`}>About</Link>
           <Link to="/products" className={`nav-link ${pathname === "/products" && "active"}`}>Products</Link>
           <Link to="/top-rated" className={`nav-link ${pathname === "/top-rated" && "active"}`}>Top Rated</Link>
+          <Link to="/dashboard" className={`nav-link ${pathname === "/dashboard" && "active"}`}>Dashboard</Link>
           <Link to="/cart" className={`nav-link ${pathname === "/cart" && "active"}`}>Cart (<span className='text-primary fw-bold'>{totalCartItem}</span>)</Link>
           </Nav>
         </Navbar.Collapse>

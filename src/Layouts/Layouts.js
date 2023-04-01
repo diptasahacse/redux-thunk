@@ -1,16 +1,19 @@
 import React from "react";
 import Footer from "./Footer";
 import MyNavbar from "./MyNavbar";
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Layouts = ({ children }) => {
-  //console.log(children);
+  const location = useLocation();
+  const pathName = location.pathname.split("/")[1];
+
 
   return (
     <>
-      <MyNavbar />
+      {pathName !== "dashboard" && <MyNavbar />}
+
       {children}
-      <Footer />
+      {pathName !== "dashboard" && <Footer />}
     </>
   );
 };

@@ -39,7 +39,11 @@ const ProductCard = ({ item }) => {
         <p className="d-flex align-items-center gap-1">
           <span>Rating: </span> <ProductRatingStar star={rate} />
         </p>
-        <span class={`badge ${stock == true ? "text-bg-primary":"text-bg-danger"} position-absolute product-badge`}>
+        <span
+          class={`badge ${
+            stock == true ? "text-bg-primary" : "text-bg-danger"
+          } position-absolute product-badge`}
+        >
           {stock == true ? "In Stock" : "Out of stock"}
         </span>
         <h5>Price : ${price}</h5>
@@ -47,6 +51,7 @@ const ProductCard = ({ item }) => {
         <div className="d-flex justify-content-between">
           {!pathname.includes("cart") && (
             <button
+            disabled={!stock}
               className="btn btn-primary mt-3"
               onClick={() => dispatch(addToCart(item))}
             >
@@ -55,6 +60,7 @@ const ProductCard = ({ item }) => {
           )}
           {pathname.includes("cart") && (
             <button
+              
               onClick={() => dispatch(removeFromCart(item))}
               className="bg-danger border-0 rounded text-white d-flex align-items-center"
             >
