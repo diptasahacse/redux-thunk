@@ -25,7 +25,7 @@ const Products = () => {
 
   let content;
 
-  if (products.length > 0) {
+  if (products.length) {
     content = (
       <div className="row g-3">
         {products.map((item, index) => (
@@ -34,11 +34,22 @@ const Products = () => {
       </div>
     );
   }
-  if (products.length > 0 && stock) {
+  if (products.length && (stock || category.length)) {
     content = (
       <div className="row g-3">
         {products
-          .filter((product) => product.stock === true)
+          .filter((product) => {
+            if (stock) {
+              return product.stock === true;
+            }
+            return product;
+          })
+          .filter((product) => {
+            if (category.length) {
+              return category.includes(product.category);
+            }
+            return product;
+          })
           .map((item, index) => (
             <ProductCard key={index} item={item} />
           ))}
@@ -62,24 +73,24 @@ const Products = () => {
                 In Stock
               </div>
               <div
-                className={`filter-box ${category.includes("men") && "active"}`}
-                onClick={() => dispatch(toggleCategory("men"))}
+                className={`filter-box ${category.includes("men's clothing") && "active"}`}
+                onClick={() => dispatch(toggleCategory("men's clothing"))}
               >
                 Men
               </div>
               <div
                 className={`filter-box ${
-                  category.includes("women") && "active"
+                  category.includes("women's clothing") && "active"
                 }`}
-                onClick={() => dispatch(toggleCategory("women"))}
+                onClick={() => dispatch(toggleCategory("women's clothing"))}
               >
                 Women
               </div>
               <div
                 className={`filter-box ${
-                  category.includes("jewellery") && "active"
+                  category.includes("jewelery") && "active"
                 }`}
-                onClick={() => dispatch(toggleCategory("jewellery"))}
+                onClick={() => dispatch(toggleCategory("jewelery"))}
               >
                 Jewellery
               </div>
