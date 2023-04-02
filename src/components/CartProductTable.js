@@ -19,7 +19,7 @@ const CartProductTable = () => {
         </thead>
         <tbody>
           {cart
-            .sort((a, b) => a.id - b.id)
+            .sort((a, b) => a.cartPosition - b.cartPosition)
             .map((product, index) => (
               <CartProductCard key={index} index={index} product={product} />
             ))}
