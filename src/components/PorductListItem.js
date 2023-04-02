@@ -22,6 +22,11 @@ const PorductListItem = ({ item: { title, stock, price, category } }) => {
             <i class="ri-delete-bin-6-line"></i>
           </span>
         </button>
+        <button className="item-remove-button">
+          <span className="text-secondary">
+          <i class="ri-edit-box-line"></i>
+          </span>
+        </button>
       </td>
     </tr>
   );
