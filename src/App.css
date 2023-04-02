@@ -18,13 +18,13 @@ body {
   box-sizing: border-box;
   font-size: 16px;
 }
-a,a:hover
-{
+a,
+a:hover {
   text-decoration: none;
   color: black;
 }
 /*  */
-.icon-link{
+.icon-link {
   text-decoration: none;
   color: black;
 }
@@ -45,6 +45,32 @@ a,a:hover
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* Navbar */
+.cart-nav-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cart-icon {
+  position: relative;
+  font-size: 25px;
+}
+.cart-nav-quantity {
+  font-size: 10px;
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  line-height: 10px;
+  align-items: center;
+  position: absolute;
+  right: -15px;
+  top: 0px;
 }
 
 .product-card {
@@ -150,27 +176,27 @@ a,a:hover
   background-color: #2a3042;
   padding: 20px;
 }
-.sidebar-menu ul{
+.sidebar-menu ul {
   list-style: none;
 }
-.sidebar-menu ul li{
+.sidebar-menu ul li {
   padding: 5px 15px;
 }
-.sidebar-menu ul li a{
+.sidebar-menu ul li a {
   text-decoration: none;
   color: #545a6d;
   font-size: 16px;
-  
+
   width: 100%;
 }
-.sidebar-menu ul li a.active{
+.sidebar-menu ul li a.active {
   color: white;
 }
-.toggle-button{
+.toggle-button {
   background-color: transparent;
   border: none;
 }
-.toggle-button span{
+.toggle-button span {
   font-size: 25px;
 }
 #sidebar-wrapper.toggle {
@@ -190,7 +216,7 @@ a,a:hover
   transition: all 0.3s;
   background-color: #f7f7fa;
   overflow: hidden;
-    overflow-y: scroll;
+  overflow-y: scroll;
 }
 
 .dashboard-nav {
@@ -201,11 +227,11 @@ a,a:hover
   z-index: 20;
   border-bottom: 1px solid rgb(160, 160, 160);
 }
-.back-to-home{
+.back-to-home {
   font-size: 25px;
   color: white;
 }
-.back-to-home:hover{
+.back-to-home:hover {
   color: white;
 }
 .dashboard-content-area {
@@ -219,10 +245,8 @@ a,a:hover
   border-radius: 10px;
 }
 
-
-
 /* Product list */
-.item-remove-button{
+.item-remove-button {
   border: none;
   background-color: transparent;
 }

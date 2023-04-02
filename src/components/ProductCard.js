@@ -51,16 +51,18 @@ const ProductCard = ({ item }) => {
         <div className="d-flex justify-content-between">
           {!pathname.includes("cart") && (
             <button
-            disabled={!stock}
-              className="btn btn-primary mt-3"
+              disabled={!stock}
+              className="btn btn-primary d-flex align-items-center gap-1 mt-3"
               onClick={() => dispatch(addToCart(item))}
             >
-              Add to Cart
+              <span className="d-flex">
+                <i class="ri-add-circle-line"></i>
+              </span>
+              <span>Add to Cart</span>
             </button>
           )}
           {pathname.includes("cart") && (
             <button
-              
               onClick={() => dispatch(removeFromCart(item))}
               className="bg-danger border-0 rounded text-white d-flex align-items-center"
             >

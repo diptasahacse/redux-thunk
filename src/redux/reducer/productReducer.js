@@ -13,14 +13,14 @@ const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       const productIsThere = state.cart.find(
-        (element) => element.id === action.payload.id
+        (element) => element._id === action.payload._id
       );
-      // console.log(typeof action.payload.id);
+      // console.log(typeof action.payload._id);
       if (productIsThere) {
         console.log("Product is there");
         productIsThere.quantity = productIsThere.quantity + 1;
         const newCart = state.cart.filter(
-          (product) => product.id != action.payload.id
+          (product) => product._id != action.payload._id
         );
 
         return {
@@ -39,26 +39,26 @@ const productReducer = (state = initialState, action) => {
     case REMOVE_FROM_CART:
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id !== action.payload.id),
+        cart: state.cart.filter((item) => item._id !== action.payload._id),
       };
     case QUANTITY_INCREMENT:
-      const proId = action.payload.id;
+      const proId = action.payload._id;
       const targetedCartProduct = state.cart.find(
-        (product) => product.id === proId
+        (product) => product._id === proId
       );
       targetedCartProduct.quantity = targetedCartProduct.quantity + 1;
 
-      const newCart = state.cart.filter((product) => product.id !== proId);
+      const newCart = state.cart.filter((product) => product._id !== proId);
 
       return { ...state, cart: [...newCart, targetedCartProduct] };
     case QUANTITY_DECREMENT:
   
-      const pId = action.payload.id;
+      const pId = action.payload._id;
       const targetCartProduct = state.cart.find(
-        (product) => product.id === pId
+        (product) => product._id === pId
       );
       const currentQuantity = targetCartProduct.quantity;
-      const newCartArray = state.cart.filter((proId) => proId.id !== pId);
+      const newCartArray = state.cart.filter((proId) => proId._id !== pId);
       if (currentQuantity === 1) {
         return { ...state, cart: [...newCartArray] };
       }
