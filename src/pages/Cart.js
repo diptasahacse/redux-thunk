@@ -8,7 +8,7 @@ import ProductCard from "../components/ProductCard";
 
 const Cart = () => {
   const { product:{cart} } = useSelector((state) => state);
-  // console.log(cart)
+
 
   return (
     <div className="py-5">

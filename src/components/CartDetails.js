@@ -11,7 +11,6 @@ const CartDetails = () => {
     0
   );
   const shippingFee = (subTotal * 2)/100;
-  console.log(subTotal);
   return (
     <div className="cart-details">
       <div>

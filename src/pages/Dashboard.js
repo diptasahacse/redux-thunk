@@ -6,7 +6,7 @@ const Dashboard = () => {
   const location = useLocation();
   const pathName = location.pathname.split("/").reverse()[0];
   const [isToggle, setToggle] = useState(false);
-  console.log(pathName);
+
   return (
     <div id="wrapper" className="d-flex align-items-stretch">
       <div className={`${isToggle ? "toggle" : ""}`} id="sidebar-wrapper">

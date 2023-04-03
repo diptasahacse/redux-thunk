@@ -5,22 +5,24 @@ import {
   toggleCategory,
   toggleStock,
 } from "../redux/actionCreators/filterActions";
+import { loadProduct } from "../redux/actionCreators/productsActions";
+import fetchProducts from "../redux/thunk/products/fetchProducts";
 
 const Products = () => {
-  // console.log(products)
+  
 
   const {
+    product: { products },
     filter: {
       filters: { category, stock },
     },
   } = useSelector((state) => state);
+  
+
   const dispatch = useDispatch();
 
-  const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/products`)
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
+    dispatch(fetchProducts());
   }, []);
 
   let content;
@@ -73,7 +75,9 @@ const Products = () => {
                 In Stock
               </div>
               <div
-                className={`filter-box ${category.includes("men's clothing") && "active"}`}
+                className={`filter-box ${
+                  category.includes("men's clothing") && "active"
+                }`}
                 onClick={() => dispatch(toggleCategory("men's clothing"))}
               >
                 Men
