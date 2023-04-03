@@ -53,7 +53,7 @@ const MyNavbar = () => {
             </Link>
             <Link to="/cart" className="cart-nav-icon">
               <span className="cart-icon ">
-                <i class="ri-shopping-cart-line"></i>
+                <i className="ri-shopping-cart-line"></i>
                 
               </span>
               <span className="cart-nav-quantity">{totalCartItem}</span>

@@ -40,7 +40,7 @@ const ProductCard = ({ item }) => {
           <span>Rating: </span> <ProductRatingStar star={rate} />
         </p>
         <span
-          class={`badge ${
+          className={`badge ${
             stock == true ? "text-bg-primary" : "text-bg-danger"
           } position-absolute product-badge`}
         >
@@ -56,7 +56,7 @@ const ProductCard = ({ item }) => {
               onClick={() => dispatch(addToCart(item))}
             >
               <span className="d-flex">
-                <i class="ri-add-circle-line"></i>
+                <i className="ri-add-circle-line"></i>
               </span>
               <span>Add to Cart</span>
             </button>

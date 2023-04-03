@@ -43,7 +43,7 @@ const CartProductCard = ({ product, index }) => {
       <td className="align-middle text-center">
         <button onClick={() => dispatch(removeFromCart(product))} className="bg-transparent border-0">
           <span className="text-danger fs-5">
-            <i class="ri-close-circle-line"></i>
+            <i className="ri-close-circle-line"></i>
           </span>
         </button>
       </td>

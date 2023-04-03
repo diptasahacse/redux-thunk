@@ -17,7 +17,7 @@ const Dashboard = () => {
             to="/"
           >
             <span>
-              <i class="ri-home-4-fill"></i>
+              <i className="ri-home-4-fill"></i>
             </span>
           <span className="ms-2">
           Home
@@ -61,7 +61,7 @@ const Dashboard = () => {
               onClick={() => setToggle(!isToggle)}
             >
               <span>
-                <i class="ri-menu-2-line"></i>
+                <i className="ri-menu-2-line"></i>
               </span>
             </button>
           </div>

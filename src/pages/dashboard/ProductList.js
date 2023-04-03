@@ -1,25 +1,27 @@
 import React, { useEffect, useState } from "react";
 import PorductListItem from "../../components/PorductListItem";
+import { useDispatch, useSelector } from "react-redux";
+import fetchProducts from "../../redux/thunk/products/fetchProducts";
 
 const ProductList = () => {
-  const [products, setProducts] = useState([]);
-
+  const {
+    product: { products },
+  } = useSelector((state) => state);
+  const dispatch = useDispatch();
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/products`)
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
+    dispatch(fetchProducts());
   }, []);
 
   return (
     <div>
-      <div class="card">
-        <h5 class="card-header">Products</h5>
-        <div class="card-body">
-          <table class="table">
+      <div className="card">
+        <h5 className="card-header">Products</h5>
+        <div className="card-body">
+          <table className="table">
             <thead>
               <tr>
                 <th scope="col">
-                  <input class="form-check-input" type="checkbox" />
+                  <input className="form-check-input" type="checkbox" />
                 </th>
                 <th scope="col">Name</th>
                 <th scope="col">Category</th>
