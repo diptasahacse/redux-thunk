@@ -1,6 +1,7 @@
 import {
   ADD_PRODUCT,
   ADD_TO_CART,
+  DELETE_PRODUCT,
   LOAD_PRODUCT,
   QUANTITY_DECREMENT,
   QUANTITY_INCREMENT,
@@ -23,6 +24,13 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         products: [...state.products, action.payload],
+      };
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+        products: state.products.filter(
+          (product) => product._id !== action.payload
+        ),
       };
     case ADD_TO_CART:
       const productIsThere = state.cart.find(

@@ -15,3 +15,4 @@ export const TOGGLE_STOCK = "TOGGLE_STOCK"
 // PRODUCT
 export const LOAD_PRODUCT = "LOAD_PRODUCT"
 export const ADD_PRODUCT = "ADD_PRODUCT"
+export const DELETE_PRODUCT = "DELETE_PRODUCT"

@@ -1,3 +1,6 @@
+import { toast } from "react-toastify";
+import { addProduct } from "../../actionCreators/productsActions";
+
 const addProductData = (product) => {
   return async (dispatch, getState) => {
     const url = `https://api.imgbb.com/1/upload?key=${process.env.REACT_APP_IBB_API}`;
@@ -22,8 +25,16 @@ const addProductData = (product) => {
         },
       });
       const data = await res.json();
-      console.log(data)
-      
+      if (data.acknowledged) {
+        dispatch(
+          addProduct({
+            _id: data.insertedId,
+            ...product,
+            image: imageData.data.url
+          })
+        );
+        toast("Product successfully added.")
+      }
     }
   };
 };

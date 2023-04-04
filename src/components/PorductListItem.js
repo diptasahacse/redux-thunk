@@ -1,6 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { removeProduct } from "../redux/actionCreators/productsActions";
+import removeProductData from "../redux/thunk/products/removeProduct";
 
-const PorductListItem = ({ item: { title, stock, price, category } }) => {
+const PorductListItem = ({ item }) => {
+  const { _id, title, stock, price, category } = item;
+  const dispatch = useDispatch();
   return (
     <tr>
       <th scope="row">
@@ -17,14 +22,17 @@ const PorductListItem = ({ item: { title, stock, price, category } }) => {
       </td>
       <td>${price}</td>
       <td>
-        <button className="item-remove-button">
+        <button
+          onClick={() => dispatch(removeProductData(item))}
+          className="item-remove-button"
+        >
           <span className="text-danger">
             <i className="ri-delete-bin-6-line"></i>
           </span>
         </button>
         <button className="item-remove-button">
           <span className="text-secondary">
-          <i className="ri-edit-box-line"></i>
+            <i className="ri-edit-box-line"></i>
           </span>
         </button>
       </td>
