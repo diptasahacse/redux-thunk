@@ -9,21 +9,22 @@ import { loadProduct } from "../redux/actionCreators/productsActions";
 import fetchProducts from "../redux/thunk/products/fetchProducts";
 
 const Products = () => {
-  
-
   const {
     product: { products },
     filter: {
       filters: { category, stock },
     },
   } = useSelector((state) => state);
-  
 
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(fetchProducts());
   }, []);
+
+const searchHandler =  (event)=>{
+  console.log(event.target.value)
+
+}
 
   let content;
 
@@ -58,6 +59,7 @@ const Products = () => {
       </div>
     );
   }
+  
 
   return (
     <div className="py-5">
@@ -65,7 +67,19 @@ const Products = () => {
         <div className="filter mb-4 ">
           <div className="d-flex justify-content-between align-items-center">
             <div>
-              <h4 className="m-0">Filter</h4>
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">
+                <i class="ri-search-line"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  onChange={(event)=>searchHandler(event)}
+                  placeholder="Search products.."
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
             </div>
             <div className="d-flex gap-3 ">
               <div
